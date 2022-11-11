@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <!-- Elements -->
+
+    <div class="header">
+        <h1>Dog-tracker</h1>
+    </div>
+    
+    <div>
+        <p1 id = "text">Click the button to send a request to the backend</p1>
+    </div>
+    
+    <div>
+        <button id="getData">Get data</button>
+    </div>
+    
+    <!-- Javascript -->
+
+    <script>
+        var text = document.getElementById('text')
+        const getBtn = document.getElementById('getData')
+        const baseUrl = 'http://localhost:8383/data'
+        
+        getBtn.addEventListener('click', getInfo);
+        async function getInfo(e){
+            e.preventDefault();
+            var res = await fetch(baseUrl,
+            {
+                method:'GET'
+            })
+            console.log(res)
+            var data = await res.json();
+            text.innerHTML = "Heart of the dog: " + data.heartrate + "; Timestamp: " + data.timestamp;
+        }
+    </script>
+</body>
+</html>
