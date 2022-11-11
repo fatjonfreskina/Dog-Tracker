@@ -2,26 +2,65 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="Style/button.css" />
+    <link rel="stylesheet" type="text/css" href="Style/dog.css" />
+    
 </head>
 
 <body>
     
     <!-- Elements -->
-
-    <div class="header">
+    <div class="main">
         <h1>Dog-tracker</h1>
     </div>
-    
-    <div>
+    <!-- Dog -->
+    <div class="main">
+        <div class="dog">
+          <div class="dog__paws">
+            <div class="dog__bl-leg leg">
+              <div class="dog__bl-paw paw"></div>
+              <div class="dog__bl-top top"></div>
+            </div>
+            <div class="dog__fl-leg leg">
+              <div class="dog__fl-paw paw"></div>
+              <div class="dog__fl-top top"></div>
+            </div>
+            <div class="dog__fr-leg leg">
+              <div class="dog__fr-paw paw"></div>
+              <div class="dog__fr-top top"></div>
+            </div>
+          </div>
+          <div class="dog__body">
+            <div class="dog__tail"></div>
+          </div>
+          <div class="dog__head">
+            <div class="dog__snout">
+              <div class="dog__nose"></div>
+              <div class="dog__eyes">
+                <div class="dog__eye-l"></div>
+                <div class="dog__eye-r"></div>
+              </div>
+            </div>
+          </div>
+          <div class="dog__head-c">
+            <div class="dog__ear-l"></div>
+            <div class="dog__ear-r"></div>
+          </div>
+        </div>
+      </div>
+    <!-- /Dog -->
+
+    <div class="main">
         <p1 id = "text">Click the button to send a request to the backend</p1>
     </div>
     
-    <div>
-        <button id="getData">Get data</button>
+    <div class="main">
+        <button id = "getData" class="button-5" role="button">Click here</button>
     </div>
     
     <!-- Javascript -->
@@ -40,7 +79,7 @@
             })
             console.log(res)
             var data = await res.json();
-            text.innerHTML = "Heart of the dog: " + data.heartrate + "; Timestamp: " + data.timestamp;
+            text.innerHTML = "Heartrate: " + data.heartrate + "; Timestamp: " + data.timestamp;
         }
     </script>
 </body>
