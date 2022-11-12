@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Dog-tracker-2022</title>
   <link rel="stylesheet" type="text/css" href="Style/button.css" />
   <link rel="stylesheet" type="text/css" href="Style/dog.css" />
   <link rel="stylesheet" type="text/css" href="Style/text.css" />
@@ -66,23 +66,8 @@
 
   <!-- Javascript -->
 
-  <script>
-    var text = document.getElementById('text')
-    const getBtn = document.getElementById('getData')
-    const baseUrl = 'http://localhost:8383/data'
+  <script src="Script/getButton.js"></script>
 
-    getBtn.addEventListener('click', getInfo);
-    async function getInfo(e) {
-      e.preventDefault();
-      var res = await fetch(baseUrl,
-        {
-          method: 'GET'
-        })
-      console.log(res)
-      var data = await res.json();
-      text.innerHTML = "Heartrate: " + data.heartrate + "; Timestamp: " + data.timestamp;
-    }
-  </script>
 </body>
 
 </html>
