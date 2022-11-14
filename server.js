@@ -14,15 +14,15 @@ var finalData = {}
 
 const client = mqtt.connect(connectUrl, {
     clean: true,
-    connectTimeout: 400,
+    connectTimeout: 4000,
     username: 'dog-tracker-2022@ttn',
     password: 'NNSXS.S3JF4HR74VZA4D6IC6YIOPG3OU2PYD65EBSXNCQ.K4M32LVUFFIJBEWXDDB6YF5WEVFOFPAXUS3Z4ZC7TE27KRM47SBA',
-    reconnectPeriod: 10,
+    reconnectPeriod: 1000,
 })
 
 client.on('connect', () => {
     // v3/{application id}@{tenant id}/devices/{device id}/up
-    var topic = "v3/dog-tracker-2022@ttn/devices/test-device/up"; 
+    var topic = "v3/dog-tracker-2022@ttn/devices/last-device/up"; 
     console.log('Connected')
     client.subscribe(topic);
     console.log('Subscribed');
@@ -50,6 +50,7 @@ client.on("message", function (topic, message, packet) {
     data = JSON.stringify(getDataFromTTN.uplink_message.decoded_payload);
     // update the variable
     finalData = data;
+    console.log(data)
     
 })  
 
