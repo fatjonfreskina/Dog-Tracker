@@ -16,15 +16,6 @@ h1 {
 }
 
 p1 {
-    font-family: Courier;
-    font-size: 14px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 700;
-    line-height: 15.4px;
-}
-
-p1 {
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
     font-size: 14px;
     font-style: normal;
