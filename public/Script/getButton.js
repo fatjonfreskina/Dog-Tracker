@@ -14,5 +14,5 @@ async function getInfo(e) {
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
     data.timestamp = today.toLocaleString();
-    text.innerHTML = "Heartrate: " + data.heartrate + "; Timestamp: " + data.timestamp;
+    text.innerHTML = "Heartrate: " + data.heartrate + "; \nTimestamp: " + data.timestamp + "; Temperature: " + data.temp;
 }
