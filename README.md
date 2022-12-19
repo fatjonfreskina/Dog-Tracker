@@ -47,7 +47,10 @@ The goal were to track health information about the dog. The heartbeat sensor wo
 
 ## The test campaign (what, why, how)
 
+The mqtt library in javascript provides at each message exchanged the SNR, we wrote a python script to see how this changed over time.
 
+Here the results:
 
+![snr]()
 
 
