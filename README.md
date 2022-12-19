@@ -46,7 +46,8 @@ Steps:
 - Clone the repository with `git clone https://github.com/fatjonfreskina/Dog-Tracker.git`
 - Navigate inside the repo and install the Node.js dependencies with `npm install express && npm install mqtt`
 - To start the application run `npm run dev` : server will be listening on localhost:8383.
-- Connect the arduino to your computer
+- Connect the arduino to your computer (make sure that everything is wired correctly in the board, check figure below)
+![setup](/images/IMG_8037.JPG)
 - Open the .ino file located inside Dog-Tracker/arduino/sketch_nov10a/
 - Select the correct port in the Arduino IDE, Upload and Run the program.
 
