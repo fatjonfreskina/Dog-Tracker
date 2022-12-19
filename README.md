@@ -2,30 +2,41 @@
 
 ## Index
 
-- The group members
-- The description of the project and its goals
-- The architecture hardware
-o List of equipment
-o Assembly diagram
-- The hardware and software architecture
-o Installation and configuration
-o Libraries used
-- The results according to the goals
-- The test campaign (what, why, how)
-- The results of the campaign
-- The proposed suggestions and optimization
+- [The group members](#the-group-members)
+- [The description of the project and its goals](#the-description-of-the-project-and-its-goals)
+- [The architecture hardware](#the-architecture-hardware)
+- [The software architecture](#the-software-architecture)
+- [The results according to the goals](#the-results-according-to-the-goals)
+- [The test campaign (what, why, how)](#the-test-campaign-what-why-how)
+- [The results of the campaign](#the-results-according-to-the-goals)
+- [The proposed suggestions and optimization](#the-proposed-suggestions-and-optimization)
 
 ## The group members
 
+- Fatjon Freskina
+- Goillot Geoffrey
+- Lesec--Rolland Titouan
+- Lepers Mathilde
+
 ## The description of the project and its goals
+
+The main objective of this project was to discover the IOT technologies and especially the long range with LORAWAN. To illustrate this we had to design and realize a project to implement IOT technologies.
+For our project, we decided to create a Dog Tracker. Indeed, the latter is able to track health information of a dog especially his heartbeat and the environment temperature.
+Once the gateway receives packets, we use the MQTT protocol to communicate with our application which is a website with all the information we want about the dog. 
 
 ## The architecture hardware
 
-## The hardware and software architecture
+We used a heartbeat sensor to take our measures. When our sensor wants to send data over the internet, it broadcasts the data packet in all directions using LoRa technology. This packet will be received by our device with antennas capable of receiving LoRa packets, called LoRaWAN gateways. We chose loRaWAN because this technology enables us to transmit information over long distances and this is exactly what we want in our project.
+
+![tit1](/images/Schermata%202022-12-19%20alle%2009.24.15.png)
+
+## The software architecture
+
+![homepage](/images/Homepage.png)
 
 ### Setup and Run
 
-Requirements: 
+Requirements:
 
 - Arduino IDE
 - Node.js
@@ -43,7 +54,7 @@ The server will receive data approximately every 15~20 seconds.
 
 ## The results according to the goals
 
-The goal were to track health information about the dog. The heartbeat sensor works properly, however due to lack of time we were able to send only fake temperature data instead of real one. 
+The goal were to track health information about the dog. The heartbeat sensor works properly, however due to lack of time we were able to send only fake temperature data instead of real one.
 
 ## The test campaign (what, why, how)
 
@@ -51,6 +62,16 @@ The mqtt library in javascript provides at each message exchanged the SNR, we wr
 
 Here the results:
 
-![snr]()
+![snr](/testing/SNR_plot.png)
 
+We also tested the power consumption of the full prototype:
 
+![power](/testing/Test-Iot-Ecam.png)
+
+## The proposed suggestions and optimization
+
+- Waterproof
+- Reduce the cost
+- Increase distance
+- Create an alert if heartbeat too high
+- Add temperature and gps sensors
